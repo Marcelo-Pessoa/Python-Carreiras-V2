@@ -31,7 +31,7 @@ def carrega_vaga_db(id):
 def adiciona_inscricao(vaga_id, dados):
   with engine.connect() as conn:
     query = text(
-        f"INSERT INTO inscricoes(vaga_id, nome, email, linkedin, experiencia) VALUES(:vaga_id, :nome, :email, :linkedin, :experiencia)"
+        f"INSERT INTO inscricoes (vaga_id, nome, email, linkedin, experiencia) VALUES(:vaga_id, :nome, :email, :linkedin, :experiencia)"
     )
     conn.execute(
         query, {
@@ -41,3 +41,4 @@ def adiciona_inscricao(vaga_id, dados):
             'linkedin': dados['linkedin'],
             'experiencia': dados['experiencia']
         })
+    conn.commit()
