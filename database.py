@@ -26,3 +26,18 @@ def carrega_vaga_db(id):
       return None
     else:
       return dict(registro[0])
+
+
+def adiciona_inscricao(vaga_id, dados):
+  with engine.connect() as conn:
+    query = text(
+        f"INSERT INTO inscricoes(vaga_id, nome, email, linkedin, experiencia) VALUES(:vaga_id, :nome, :email, :linkedin, :experiencia)"
+    )
+    conn.execute(
+        query, {
+            'vaga_id': vaga_id,
+            'nome': dados['nome'],
+            'email': dados['email'],
+            'linkedin': dados['linkedin'],
+            'experiencia': dados['experiencia']
+        })
