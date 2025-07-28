@@ -1,21 +1,21 @@
 <div class="row border-bottom" style="margin-bottom: 15px;">
- <div class="col-9">
-   <div style="marigin-bottom: 15px;">
-     <h4 style="color: rgb(120, 120, 120); margin-bottom: 4px;">
-       {{ vaga.titulo }}
-     </h4>
-     <div>
-       <strong>Localidade:</strong>
-       {{ vaga.localidade }}
-     </div>
-     <div>
-       <strong>Salário:</strong>
-       {{ vaga.salario }}
-     </div>
-   </div>
- </div>
+  <div class="col-9">
+    <div style="marigin-bottom: 15px;">
+      <h4 style="color: rgb(120, 120, 120); margin-bottom: 4px;">
+        {{ vaga.titulo }}
+      </h4>
+      <div>
+        <strong>Localidade:</strong>
+        {{ vaga.localidade }}
+      </div>
+      <div>
+        <strong>Salário:</strong>
+        {{ vaga.salario }}
+      </div>
+    </div>
+  </div>
   <div class="col-3">
-    <a href="mailto:someone@yoursite.com?subject=Vaga {{vaga.titulo}}" class="btn btn-outline-primary" type="button">
+    <a href="/vaga/{{vaga.id}}" class="btn btn-outline-primary" type="button">
       Aplicar
     </a>
   </div>

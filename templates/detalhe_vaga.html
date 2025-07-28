@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ vaga.titulo }}</title>
+</head>
+
+<body>
+  {% include 'includes/navbar.html' %}
+  <div class="container">
+    <h1 class="text-center mt-2 mb-4">Python Carreiras</h1>
+    <hr>
+    <h3>{{ vaga.titulo }}</h3>
+    <p class="lead">{{ vaga.localidade }}</p>
+    <ul>
+      {% for linha in vaga.responsabilidades.split(".") %}
+      <li>{{ linha }}</li>
+      {% endfor %}
+    </ul>
+    <h3>Salário</h3>
+    <p>{{ vaga.moeda }} {{ vaga.salario }}</p>
+  </div>
+  {% include 'includes/footer.html' %}
+</body>
+
+</html>
